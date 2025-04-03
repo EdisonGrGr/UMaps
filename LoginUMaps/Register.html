@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crear Cuenta - U Maps</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <div class="login-wrapper">
+    <div class="login-container">
+      <h1 class="fade-in">U Maps</h1>
+      <img src="/images/logo_ucaldas.png" alt="Universidad de Caldas" class="logo fade-in" />
+
+      <form class="form-slide" autocomplete="off">
+        <div class="input-group">
+          <input type="email" required />
+          <label>Email</label>
+        </div>
+
+        <div class="input-group">
+          <input type="password" required />
+          <label>Contraseña</label>
+        </div>
+
+        <div class="input-group">
+          <input type="password" required />
+          <label>Confirmar Contraseña</label>
+        </div>
+
+        <button type="submit" class="btn-glow">Crear Cuenta</button>
+      </form>
+
+      <div class="google-login">
+        <div id="g_id_onload"
+            data-client_id="TU_CLIENT_ID"
+            data-context="signup"
+            data-ux_mode="popup"
+            data-callback="handleCredentialResponse"
+            data-auto_prompt="false">
+        </div>
+
+        <div class="g_id_signin"
+            data-type="standard"
+            data-shape="rectangular"
+            data-theme="outline"
+            data-text="signup_with"
+            data-size="large">
+        </div>
+      </div>
+
+      <p class="terms-text fade-in">
+        Al crear una cuenta, aceptas los <a href="#">términos y condiciones</a> de U Maps.
+      </p>
+
+      <p class="register-text fade-in">
+        ¿Ya tienes cuenta? <a href="Login.html">Inicia Sesión</a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function handleCredentialResponse(response) {
+      console.log("Google Credential:", response.credential);
+      // token backend para autenticación
+    }
+  </script>
+</body>
+</html>
